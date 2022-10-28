@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<HomePage />}/>
-          <Route path='/:language' element={<LanguagePage />} />
+          <Route path='/language/:languageId' element={<LanguagePage />} />
           <Route path='*' element={<NotFoundPage />}/>
         </Routes>
       </Router>
