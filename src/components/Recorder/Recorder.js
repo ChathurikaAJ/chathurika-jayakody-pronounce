@@ -1,5 +1,8 @@
 import './Recorder.scss'
 import {useState, useRef} from 'react'
+import axios from 'axios'
+
+const baseURL = 'http://localhost:8080/languages/'
 
 export default function Recorder(){
     const [stream, setStream] = useState({
@@ -51,7 +54,7 @@ export default function Recorder(){
                 console.log('Recorder Stopped');
 
                 const url = URL.createObjectURL(chunks.current[0]);
-                //POST to server
+                postToServer(chunks.current[0])
                 chunks.current = [];
 
                 setRecording({
@@ -73,7 +76,14 @@ export default function Recorder(){
         });
     }
 
-    //POST TO SERVER
+    //Function to POST audio to server
+    const postToServer = (audio) => {
+        const formData = new FormData();
+        formData.append('user-audio',audio,'user-audio.webm');
+        axios.post(`${baseURL}audio`,formData,{
+            'Content-type':'multipart/form-data'
+        })
+    }
 
 
 
