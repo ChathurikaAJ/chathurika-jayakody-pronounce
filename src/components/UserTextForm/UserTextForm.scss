@@ -1,5 +1,14 @@
-.language__form {
-    display: flex;
-    flex-direction: column;
-    width: 20%; //change later
+.language{
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 20%; //change later
+    }
+
+    &__speaker{
+        width: 25px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }
