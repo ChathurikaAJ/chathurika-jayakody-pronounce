@@ -13,6 +13,7 @@ export default function UserTextForm(){
     
     const handleSubmit = (event) => {
         event.preventDefault()
+    
         const textDetails = {
             language: languageId,
             text: event.target.text.value

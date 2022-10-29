@@ -1,10 +1,16 @@
 import './Recorder.scss'
-import {useState, useRef} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import axios from 'axios'
+import Result from '../Result/Result'
 
 const baseURL = 'http://localhost:8080/languages/'
 
-export default function Recorder(){
+export default function Recorder({setResult}){
+
+    
+
+
+    // RECORDER
     const [stream, setStream] = useState({
         access:false,
         recorder:null,
@@ -78,6 +84,7 @@ export default function Recorder(){
 
     //Function to POST audio to server
     const postToServer = (audio) => {
+        
         const formData = new FormData();
         formData.append('user-audio',audio,'user-audio.webm');
         axios.post(`${baseURL}audio`,formData,{
@@ -85,10 +92,10 @@ export default function Recorder(){
         })
         .then(response=>{
             console.log(response.data)
+            setResult(response.data)
+            
         })
     }
-
-
 
     return (
         <div>
@@ -103,6 +110,7 @@ export default function Recorder(){
                     <button onClick={getAccess}>Click to Record</button>
                 )
             }
+            
         </div>
     );
 }
