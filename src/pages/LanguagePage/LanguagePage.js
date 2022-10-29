@@ -2,6 +2,7 @@ import {  useState } from 'react'
 import Recorder from '../../components/Recorder/Recorder'
 import UserTextForm from '../../components/UserTextForm/UserTextForm'
 import Result from '../../components/Result/Result'
+import Submit from '../../components/Submit/Submit'
 
 
 
@@ -15,6 +16,7 @@ export default function LanguagePage(){
             <UserTextForm />
             <Recorder setResult={setResult}/>
             {result && <Result result={result}/>}
+            <Submit />
           
 
         </div>
