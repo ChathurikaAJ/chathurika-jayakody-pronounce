@@ -83,6 +83,9 @@ export default function Recorder(){
         axios.post(`${baseURL}audio`,formData,{
             'Content-type':'multipart/form-data'
         })
+        .then(response=>{
+            console.log(response.data)
+        })
     }
 
 
