@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import axios from "axios";
 import speakerIcon from '../../assets/icons/speaker.png'
 
-const baseURL = 'http://localhost:8080/'
+const baseURL = 'http://localhost:8080/languages/'
 
 export default function UserTextForm(){
     const [displaySpeaker,setDisplaySpeaker] = useState(false)
@@ -17,14 +17,14 @@ export default function UserTextForm(){
             language: languageId,
             text: event.target.text.value
         }
-        // axios.post(`${baseURL}text`,textDetails)
-        //     .then(()=>{
-        //         setDisableSubmit(true)
-        //         setDisplaySpeaker(true)
-        //     })
-        //     .catch((error)=>{
-        //         console.log(error);
-        //     })
+        axios.post(`${baseURL}text`,textDetails)
+            .then(()=>{
+                setDisableSubmit(true)
+                setDisplaySpeaker(true)
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
 
         //axios post
         //check error
