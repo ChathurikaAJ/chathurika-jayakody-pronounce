@@ -6,11 +6,11 @@ export default function HomePage(){
     return(
         <div>
             <img className='hero'src={welcomeImage}/>
-            <main className='main'>
-                <Link to='/language/english'><p>English</p></Link>  
-                <Link to='/language/french'><p>French</p></Link> 
-                <Link to='/language/spanish'><p>Spanish</p></Link> 
-                <Link to='/language/chinese'><p>Chinese</p></Link>
+            <main className='language'>
+                <Link to='/language/english'><p className='language__name'>English</p></Link>  
+                <Link to='/language/french'><p className='language__name'>French</p></Link> 
+                <Link to='/language/spanish'><p className='language__name'>Spanish</p></Link> 
+                <Link to='/language/chinese'><p className='language__name'>Chinese</p></Link>
             </main>
         </div>
         

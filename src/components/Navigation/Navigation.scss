@@ -1,13 +1,15 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     background-color: #96E0DE;
+    font-size: 12px;//change
 
     &__titles{
         display: flex;
-        width: 40%;
+        width: 40%; //change
         justify-content: space-between;
+        color: #DF5C28;
     }
 }

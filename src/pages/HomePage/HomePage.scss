@@ -1,9 +1,24 @@
+@use "../../styles/partials/global" as *;
+
 .hero {
     width: 100vw;
 }
 
-.main{
-    display: flex;
+.language{
     width: 100%;
     justify-content: space-around;
+    text-align: center;
+    padding: 0 1rem;
+
+    @include tablet{
+        display: flex;
+    }
+
+    &__name{
+        background-color: #96E0DE;
+        margin-bottom: 1rem;
+        padding: 1rem 0;
+        color: #DF5C28;
+        font-weight: bold;
+    }
 }

@@ -1,0 +1,18 @@
+.word-card{
+    border: 1px solid black;
+
+    &__score{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__syllabes{
+        display: flex;
+        // justify-content:space-between;
+    }
+
+    &__phonemes{
+        display: flex;
+        // justify-content:space-between;
+    }
+}
