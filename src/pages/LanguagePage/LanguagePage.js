@@ -16,7 +16,7 @@ export default function LanguagePage(){
             <UserTextForm />
             <Recorder setResult={setResult}/>
             {result && <Result result={result}/>}
-            <Submit />
+            <Submit setResult={setResult}/>
           
 
         </div>
