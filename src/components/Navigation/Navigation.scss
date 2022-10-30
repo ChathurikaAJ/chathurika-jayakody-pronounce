@@ -1,0 +1,13 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    background-color: #96E0DE;
+
+    &__titles{
+        display: flex;
+        width: 40%;
+        justify-content: space-between;
+    }
+}
