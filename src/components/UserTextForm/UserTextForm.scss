@@ -17,27 +17,42 @@
             overflow: hidden;
             border: solid black 1px;
             border-radius: 3px;
+            font-family: inherit;
+            font-size: inherit;
 
             &:focus {
                 outline: none;//remove default outline
                 border: 2px #DF5C28 solid;
             }
+
+            
             
         }
         
 
         &-start{
-            width: 50px;
+            width: 70px;
             align-self: center;
             margin-top: 1rem;
+            background-color: #2EAEB7;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 8px 8px -4px lightblue;
+
             &:hover{
                 cursor: pointer;
             }
+
+            
         }
     }
 
     &__speaker{
-        width: 15px;
+        width: 25px;
+        margin-left: 1rem;
+        margin-bottom: -0.4rem;
         &:hover{
             cursor: pointer;
         }

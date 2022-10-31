@@ -14,6 +14,7 @@ export default function LanguagePage(){
     const [result,setResult] = useState(null)
     const {languageId} = useParams()
     const [heroImage, setHeroImage] = useState('')
+    const [textSubmitted, setTextSubmitted] = useState(false)
     
     useEffect(()=>{
         if(languageId==='english'){
@@ -33,10 +34,10 @@ export default function LanguagePage(){
             
             <div className='language-page__main'>
                 <h1>{languageId.charAt(0).toUpperCase()+languageId.slice(1)}</h1>
-                <UserTextForm />
-                <Recorder setResult={setResult}/>
+                <UserTextForm setTextSubmitted={setTextSubmitted}/>
+                {textSubmitted && <Recorder setResult={setResult}/>}
                 {result && <Result result={result}/>}
-                <Submit setResult={setResult}/>
+                {textSubmitted &&<Submit setResult={setResult}/>}
             </div>
             
         </div>

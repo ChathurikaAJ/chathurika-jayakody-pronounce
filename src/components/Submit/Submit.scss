@@ -1,8 +1,17 @@
 .submit{
     text-align: center;
-    margin-top: 1rem;
     
     &__button{
+        width: 70px;
+        align-self: center;
+        margin-top: 1rem;
+        background-color: #2EAEB7;
+        margin-bottom: 1rem;
+        padding: 0.5rem 0;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 8px 8px -4px lightblue;
+        
         &:hover{
             cursor: pointer;
         }

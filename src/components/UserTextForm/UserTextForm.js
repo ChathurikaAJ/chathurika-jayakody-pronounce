@@ -6,13 +6,14 @@ import speakerIcon from '../../assets/icons/speaker.png'
 
 const baseURL = 'http://localhost:8080/languages/'
 
-export default function UserTextForm(){
+export default function UserTextForm({setTextSubmitted}){
     const [displaySpeaker,setDisplaySpeaker] = useState(false)
     const [disableSubmit,setDisableSubmit] = useState(false)
     const {languageId} = useParams()
     
     const handleSubmit = (event) => {
         event.preventDefault()
+        setTextSubmitted(true)//move after axios post
     
         const textDetails = {
             language: languageId,
@@ -22,6 +23,7 @@ export default function UserTextForm(){
             .then(()=>{
                 setDisableSubmit(true)
                 setDisplaySpeaker(true)
+                
             })
             .catch((error)=>{
                 console.log(error);
@@ -41,6 +43,7 @@ export default function UserTextForm(){
         var audio = new Audio("http://127.0.0.1:1337/");
         audio.play()
     }
+
 
 
     return(
