@@ -1,14 +1,34 @@
-import './Navigation.scss'
+import "./Navigation.scss";
+import { Link } from "react-router-dom";
+import NavDropDown from "../NavDropDown/NavDropDown";
+import { useState } from "react";
 
-export default function (){
-    return(
-        <div className='nav'>
-            <p>LOGO</p>
-            <div className='nav__titles'>
-                <p>Home</p>
-                <p>Language</p>
-            </div>
+export default function () {
+  const [showList, setShowList] = useState(false);
+
+  const onMoveEnter = () => {
+    setShowList(true);
+  };
+
+  const onMoveLeave = () => {
+    setShowList(false);
+  };
+
+  return (
+    <div className="nav">
+      <Link to="/">
+        <p>LOGO</p>
+      </Link>
+
+      <div className="nav__titles">
+        <Link to="/">
+          <p>Home</p>
+        </Link>
+        <div onMouseEnter={onMoveEnter} onMouseLeave={onMoveLeave} className="nav__titles-languages">
+          <p>Languages</p>
+          {showList && <NavDropDown />}
         </div>
-
-    )
+      </div>
+    </div>
+  );
 }

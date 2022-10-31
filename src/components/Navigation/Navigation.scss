@@ -11,5 +11,10 @@
         width: 40%; //change
         justify-content: space-between;
         color: #DF5C28;
+
+        &-languages{
+            position: absolute;
+            left: 80%;//change
+        }
     }
 }
