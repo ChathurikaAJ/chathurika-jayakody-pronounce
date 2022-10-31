@@ -2,6 +2,7 @@ import "./Navigation.scss";
 import { Link } from "react-router-dom";
 import NavDropDown from "../NavDropDown/NavDropDown";
 import { useState } from "react";
+import logo from '../../assets/logo/logo.png'
 
 export default function () {
   const [showList, setShowList] = useState(false);
@@ -17,7 +18,7 @@ export default function () {
   return (
     <div className="nav">
       <Link to="/">
-        <p>LOGO</p>
+        <img className="nav__logo" src={logo}/>
       </Link>
 
       <div className="nav__titles">

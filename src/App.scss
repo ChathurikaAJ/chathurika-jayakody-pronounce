@@ -1,4 +1,5 @@
 @use './styles/partials/global' as *;
+@use './styles/partials/typekit' as *;
 
 //Remove margin and padding, change box-sizing, remove styles
 
@@ -14,5 +15,11 @@ ul {
 
 a, link {
     text-decoration: none;   
+    color: black;
     
+}
+
+body {
+    font-family: 'Gudea';
+    font-weight: 400;
 }

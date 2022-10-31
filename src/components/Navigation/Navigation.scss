@@ -3,14 +3,17 @@
     justify-content: space-between;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
-    background-color: #96E0DE;
+    background-color: #DDF5F4;
     font-size: 12px;//change
+
+    &__logo{
+        width: 100px;
+    }
 
     &__titles{
         display: flex;
         width: 40%; //change
         justify-content: space-between;
-        color: #DF5C28;
 
         &-languages{
             position: absolute;
