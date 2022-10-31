@@ -46,10 +46,14 @@ export default function UserTextForm(){
     return(
         <div className='language__container'>
             <form onSubmit={handleSubmit} className='language__form'>
-                <textarea  name='text' className='language__form-text'></textarea>
-                <button disabled={disableSubmit} className='language__form-start'>Start!</button>
+                <textarea  name='text' className='language__form-text' placeholder='Enter your text here and click start'></textarea>
+                <div  className='language__form-container'>
+                    <button disabled={disableSubmit} className='language__form-start'>Start</button>
+                    {displaySpeaker && <img className='language__speaker' onClick={hadleSpeakerClick} src={speakerIcon}/>}
+                </div>
+                
             </form>
-            {displaySpeaker && <img className='language__speaker' onClick={hadleSpeakerClick} src={speakerIcon}/>}
+           
         </div>
     )
 }

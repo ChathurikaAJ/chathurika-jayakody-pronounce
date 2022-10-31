@@ -1,0 +1,37 @@
+.recorder{
+    text-align: center;
+
+    // &__container{
+
+        
+  
+    // }
+
+    &__mic-icon{
+        width: 10px;
+        margin-top: 1rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &__stop-icon{
+        width: 10px;
+        margin-left: 1rem;
+        padding-bottom: 0.25rem;
+        &:hover{
+            cursor: pointer;
+        }
+       
+    }
+    &__play-icon{
+        width: 10px;
+        margin-left: 1rem;
+        padding-bottom: 0.25rem;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+
+}
+

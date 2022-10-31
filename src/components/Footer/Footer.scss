@@ -1,0 +1,15 @@
+.footer{
+    text-align: center;
+    &__image{
+        width: 100vw;
+        margin-top: 2rem;
+        opacity: 75%;
+    }
+
+    &__text{
+        font-size: 25px;
+        font-weight: 700;
+        color: #F5622C;
+    }
+    
+}

@@ -1,20 +1,40 @@
 @use "../../styles/partials/global" as *;
 
 .hero {
-    width: 100vw;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    // width: 100vw;
+
+    &__image{
+        // width: 100vw;
+        height: 50vw;
+
+        @include tablet{
+            height: 50vh;
+        }
+    }
+
+    
 }
 
 .language{
-    padding: 0 1rem;
+    
+    
 
     &__title{
         margin: 1rem 0;
+        padding: 0 1rem;
     }
 
     &__list{
-        width: 100%;
-        justify-content: space-around;
+        
+        justify-content: space-between;
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #F5622C;
+        padding: 0 1rem;
         
     
         @include tablet{
@@ -24,12 +44,19 @@
        
     
         &-name{
-            background-color: #DDF5F4;
+            background-color: #2EAEB7;
             margin-bottom: 1rem;
             padding: 1rem 0;
-            color: #DF5C28;
+            color: white;
             border-radius: 5px;
+            width: 40vw;
+            box-shadow: 0 8px 8px -4px lightblue;
         }
+
+        
     }
    
 }
+
+
+

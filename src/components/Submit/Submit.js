@@ -17,6 +17,9 @@ export default function ({setResult}){
 
 
     return(
-        <button onClick={handleSubmit}>SUBMIT</button>
+        <div className='submit'>
+            <button  className='submit__button' onClick={handleSubmit}>Submit</button>
+        </div>
+        
     )
 }

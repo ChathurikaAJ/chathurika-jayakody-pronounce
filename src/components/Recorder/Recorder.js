@@ -2,10 +2,13 @@ import './Recorder.scss'
 import {useState, useRef, useEffect} from 'react'
 import axios from 'axios'
 import Result from '../Result/Result'
+import mic from '../../assets/icons/mic.png'
+import stop from '../../assets/icons/stop.png'
+import play from '../../assets/icons/play.png'
 
 const baseURL = 'http://localhost:8080/languages/'
 
-export default function Recorder({setResult}){
+export default function Recorder(){
 
     
 
@@ -75,6 +78,8 @@ export default function Recorder({setResult}){
                 access:true,
                 recorder:mediaRecorder
             });
+
+            
         })
         .catch((error) => {
             console.log(error);
@@ -92,20 +97,30 @@ export default function Recorder({setResult}){
         })
     }
 
+    useEffect (()=>{
+        getAccess()
+        setStream({
+            ...stream,
+            access:true,
+        })
+    },[])
+
+    const hadlePlay = (event)=> {
+        event.preventDefault()
+        var audio = new Audio(recording.url);
+        audio.play()
+    }
+
     return (
-        <div>
-            {
-                stream.access ? (
-                    <div>
-                        <button onClick={()=> !recording.active && stream.recorder.start()}> Start Recording</button>
-                        <button onClick={()=> stream.recorder.stop()}>Stop Recording</button>
-                        {recording.available && <audio controls src={recording.url}/>}
+        <div className='recorder'>
+            { stream.access &&
+        
+                    <div  className='recorder__container'>
+                        <img onClick={()=> stream.recorder.start()} src={mic} className='recorder__mic-icon' ></img>
+                        <img onClick={()=> stream.recorder.stop()}  src={stop} className='recorder__stop-icon' ></img>
+                        {recording.available && <img src={play} onClick={hadlePlay} className='recorder__play-icon'/>}
                     </div>
-                ) : (
-                    <button onClick={getAccess}>Click to Record</button>
-                )
             }
-            
         </div>
     );
 }

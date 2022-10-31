@@ -2,13 +2,45 @@
     &__form {
         display: flex;
         flex-direction: column;
-        width: 20%; //change later
+        width: 100%; //change later
+        margin-top: 1rem;
+
+        &-container{
+            width: 100%;
+            text-align: center;
+        }
+
+        &-text{
+            text-align: center;
+            padding-top: 0.75rem;
+            resize: none;
+            overflow: hidden;
+            border: solid black 1px;
+            border-radius: 3px;
+
+            &:focus {
+                outline: none;//remove default outline
+                border: 2px #DF5C28 solid;
+            }
+            
+        }
+        
+
+        &-start{
+            width: 50px;
+            align-self: center;
+            margin-top: 1rem;
+            &:hover{
+                cursor: pointer;
+            }
+        }
     }
 
     &__speaker{
-        width: 25px;
+        width: 15px;
         &:hover{
             cursor: pointer;
         }
     }
 }
+

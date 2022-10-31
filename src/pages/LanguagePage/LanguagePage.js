@@ -15,7 +15,7 @@ export default function LanguagePage(){
 
     return(
         <div className='main'>
-            <p>{languageId.toUpperCase()}</p>
+            <p>{languageId.charAt(0).toUpperCase()+languageId.slice(1)}</p>
             <UserTextForm />
             <Recorder setResult={setResult}/>
             {result && <Result result={result}/>}

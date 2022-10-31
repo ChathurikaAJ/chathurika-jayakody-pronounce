@@ -1,23 +1,37 @@
+@use "../../styles/partials/global" as *;
+
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding:1rem;
-    margin-bottom: 1rem;
-    background-color: #DDF5F4;
+    background-color: #2EAEB7;
     font-size: 12px;//change
 
+    @include tablet{
+        justify-content: space-between;
+    }
+
     &__logo{
-        width: 100px;
+        width: 150px;
+        
     }
 
     &__titles{
-        display: flex;
+        // display: flex;
         width: 40%; //change
         justify-content: space-between;
+        display: none;
+
+        @include tablet{
+            display: flex;
+        }
 
         &-languages{
             position: absolute;
             left: 80%;//change
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }
