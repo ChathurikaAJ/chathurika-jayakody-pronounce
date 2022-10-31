@@ -18,9 +18,8 @@ export default function LanguagePage(){
             <p>{languageId.toUpperCase()}</p>
             <UserTextForm />
             <Recorder setResult={setResult}/>
-            {/* {result && <Result result={result}/>} */}
+            {result && <Result result={result}/>}
             <Submit setResult={setResult}/>
-            <Result />
           
 
         </div>

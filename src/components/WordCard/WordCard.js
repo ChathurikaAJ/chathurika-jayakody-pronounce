@@ -12,7 +12,7 @@ export default function WordCard({ word, pronScore, phonemes,syllabe }) {
         </div>
       
       <div className="word-card__syllabes">
-        {syllabe .map((syllabe) => (
+        {syllabe && syllabe .map((syllabe) => (
           <SyllableCard
             key={uuid()}
             syllabe={syllabe.Syllable}
@@ -22,7 +22,7 @@ export default function WordCard({ word, pronScore, phonemes,syllabe }) {
       </div>
 
       <div className="word-card__phonemes">
-        {phonemes.map((phoneme) => (
+        {phonemes && phonemes.map((phoneme) => (
           <PhonemesCard
             key={uuid()}
             phoneme={phoneme.Phoneme}

@@ -128,7 +128,7 @@ export default function Result({ result }) {
     ],
   };
 
-  const words = output.NBest[0].Words;
+  const words = result.NBest[0].Words;
 
   return (
     <div>
@@ -143,25 +143,25 @@ export default function Result({ result }) {
       <div className="result">
         <p className="result__name">Accuracy</p>
         <p className="result__score">
-          {output.NBest[0].PronunciationAssessment.AccuracyScore}
+          {result.NBest[0].PronunciationAssessment.AccuracyScore}
         </p>
       </div>
       <div className="result">
         <p className="result__name">Fluency</p>
         <p className="result__score">
-          {output.NBest[0].PronunciationAssessment.FluencyScore}
+          {result.NBest[0].PronunciationAssessment.FluencyScore}
         </p>
       </div>
       <div className="result">
         <p className="result__name">Completeness</p>
         <p className="result__score">
-          {output.NBest[0].PronunciationAssessment.CompletenessScore}
+          {result.NBest[0].PronunciationAssessment.CompletenessScore}
         </p>
       </div>
       <div className="result">
         <p className="result__name">Pronounciation</p>
         <p className="result__score">
-          {output.NBest[0].PronunciationAssessment.PronScore}
+          {result.NBest[0].PronunciationAssessment.PronScore}
         </p>
       </div>
       {words.map((word) => (
