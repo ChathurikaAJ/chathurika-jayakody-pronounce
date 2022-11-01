@@ -1,3 +1,11 @@
 .word-card__phonemes-box{
-    border: 1px solid black;
+    background-color: #b7eef2;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0.5rem;
+
+    &-less{
+        background-color: red;
+    }
+ 
 }

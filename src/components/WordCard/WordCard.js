@@ -7,8 +7,8 @@ export default function WordCard({ word, pronScore, phonemes,syllabe }) {
   return (
     <div className="word-card">
         <div className="word-card__score">
-            <p>{word}</p>
-            <p>{pronScore.AccuracyScore}</p>
+            <p className="word-card__score-text">{word}</p>
+            <p className="word-card__score-text">{pronScore.AccuracyScore}</p>
         </div>
       
       <div className="word-card__syllabes">
