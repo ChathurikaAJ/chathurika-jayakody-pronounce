@@ -13,8 +13,8 @@ export default function PercentageCircle({amount}){
           pathColor: "#2EAEB7",
           trailColor: "#F5622C",
           strokeLinecap: "butt",
-          textSize: "25px"
-        })}/>;
+          textSize: "22px"
+        })}/>
       </div>
     )
 }

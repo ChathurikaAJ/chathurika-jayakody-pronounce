@@ -1,4 +1,5 @@
 import WordCard from "../WordCard/WordCard";
+import PercentageCircle from '../PercentageCircle/PercentageCircle'
 import "./Result.scss";
 import { v4 as uuid } from "uuid";
 import { useNavigate, Link, useParams } from "react-router-dom";
@@ -21,28 +22,29 @@ export default function Result({ result,closeModal }) {
 
   return (
     <div className="result">
+      <h2  className="result__title">Pronounciation Assessment</h2>
       <div className="result__container">
         <p className="result__name">Accuracy</p>
         <p className="result__score">
-          {result.NBest[0].PronunciationAssessment.AccuracyScore}
+          {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.AccuracyScore}/>}
         </p>
       </div>
       <div className="result__container">
         <p className="result__name">Fluency</p>
         <p className="result__score">
-          {result.NBest[0].PronunciationAssessment.FluencyScore}
+          {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.FluencyScore}/>}
         </p>
       </div>
       <div className="result__container">
         <p className="result__name">Completeness</p>
         <p className="result__score">
-          {result.NBest[0].PronunciationAssessment.CompletenessScore}
+        {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.CompletenessScore}/>}
         </p>
       </div>
       <div className="result__container">
         <p className="result__name">Pronounciation</p>
         <p className="result__score">
-          {result.NBest[0].PronunciationAssessment.PronScore}
+          {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.PronScore}/>}
         </p>
       </div>
       {words.map((word) => (
