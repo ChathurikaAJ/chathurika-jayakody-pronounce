@@ -8,7 +8,7 @@ import play from '../../assets/icons/play.png'
 
 const baseURL = 'http://localhost:8080/languages/'
 
-export default function Recorder(){
+export default function Recorder({setAudioRecorded}){
 
     
 
@@ -64,6 +64,7 @@ export default function Recorder(){
 
                 const url = URL.createObjectURL(chunks.current[0]);
                 postToServer(chunks.current[0])
+                setAudioRecorded(true)
                 chunks.current = [];
 
                 setRecording({

@@ -1,3 +1,8 @@
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+
 .submit{
     text-align: center;
     
@@ -16,4 +21,32 @@
             cursor: pointer;
         }
     }
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    position: absolute;
+
+    // @include tablet {
+    //     max-width: 500px;
+    //     height: auto;
+    //     left: 40%;
+    // }
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
 }

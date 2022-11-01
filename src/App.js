@@ -7,7 +7,7 @@ import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
-    <>
+    <div className='App'>
       <Router>
         <Navigation />
         <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Route path='*' element={<NotFoundPage />}/>
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
