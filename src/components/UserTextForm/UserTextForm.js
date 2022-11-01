@@ -13,30 +13,29 @@ export default function UserTextForm({setTextSubmitted}){
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        setTextSubmitted(true)//move after axios post
-    
-        const textDetails = {
-            language: languageId,
-            text: event.target.text.value
-        }
-        axios.post(`${baseURL}text`,textDetails)
-            .then(()=>{
-                setDisableSubmit(true)
-                setDisplaySpeaker(true)
-                
-            })
-            .catch((error)=>{
-                console.log(error);
-            })
 
-        //axios post
-        //check error
-        //if no error
-        //disable text submit button
-        //get audio file from server
-        //show speaker
-        
-    }
+        const userText = event.target.text.value
+
+        if(!userText){
+            event.target.text.classList.add('language__form-text-empty')
+        } else{   
+            event.target.text.classList.remove('language__form-text-empty') 
+            const textDetails = {
+                language: languageId,
+                text: userText
+            }
+            axios.post(`${baseURL}text`,textDetails)
+                .then(()=>{
+                    setDisableSubmit(true)
+                    setDisplaySpeaker(true)
+                    setTextSubmitted(true)
+                    
+                })
+                .catch((error)=>{
+                    console.log(error);
+                })
+        }
+}
 
     const hadleSpeakerClick = (event)=> {
         event.preventDefault()
