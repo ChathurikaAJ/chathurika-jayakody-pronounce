@@ -1,0 +1,16 @@
+.nav__list{
+    margin-top: 0.45rem;
+    background-color: #2EAEB7;
+    border-radius: 3px;
+
+    &-item{
+        padding: 0.35rem;
+        padding-left: 0.7rem;
+
+
+        border-radius: 3px;
+        &:hover{
+            background-color: #F5622C;
+        }
+    }
+}

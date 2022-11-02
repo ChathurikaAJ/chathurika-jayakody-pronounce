@@ -23,7 +23,7 @@ export default function () {
 
       <div className="nav__titles">
         <Link to="/">
-          <p>Home</p>
+          <p  className="nav__titles-home">Home</p>
         </Link>
         <div onMouseEnter={onMoveEnter} onMouseLeave={onMoveLeave} className="nav__titles-languages">
           <p>Languages</p>

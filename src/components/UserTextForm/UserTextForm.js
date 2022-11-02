@@ -1,5 +1,5 @@
 import './UserTextForm.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "axios";
 import speakerIcon from '../../assets/icons/speaker.png'
@@ -35,12 +35,16 @@ export default function UserTextForm({setTextSubmitted}){
                     console.log(error);
                 })
         }
-}
+    }
 
-    const hadleSpeakerClick = (event)=> {
+
+    const handleSpeakerClick = (event)=> {
         event.preventDefault()
-        var audio = new Audio("http://127.0.0.1:1337/");
-        audio.play()
+
+        var audio = new Audio("http://localhost:8080/audio/text-to-speech.wav");
+        if(audio){
+            audio.play()
+        }
     }
 
 
@@ -51,7 +55,7 @@ export default function UserTextForm({setTextSubmitted}){
                 <textarea  name='text' className='language__form-text' placeholder='Enter your text here and click start'></textarea>
                 <div  className='language__form-container'>
                     <button disabled={disableSubmit} className='language__form-start'>Start</button>
-                    {displaySpeaker && <img className='language__speaker' onClick={hadleSpeakerClick} src={speakerIcon}/>}
+                    {displaySpeaker && <img className='language__speaker' onClick={handleSpeakerClick} src={speakerIcon}/>}
                 </div>
                 
             </form>

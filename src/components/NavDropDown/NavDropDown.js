@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function NavDropDown (){
     return(
-        <ul>
-            <Link to='/language/chinese'><li>Chinese</li></Link>
-            <Link to='/language/english'><li>English</li></Link>
-            <Link to='/language/french'><li>French</li></Link>
-            <Link to='/language/spanish'><li>Spanish</li></Link>
+        <ul className='nav__list'>
+            <Link to='/language/chinese'><li className='nav__list-item'>Chinese</li></Link>
+            <Link to='/language/english'><li className='nav__list-item'>English</li></Link>
+            <Link to='/language/french'><li className='nav__list-item'>French</li></Link>
+            <Link to='/language/spanish'><li className='nav__list-item'>Spanish</li></Link>
         </ul>
 
     )

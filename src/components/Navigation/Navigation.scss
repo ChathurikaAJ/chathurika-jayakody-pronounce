@@ -9,6 +9,7 @@
 
     @include tablet{
         justify-content: space-between;
+        padding: 1rem 5vw;
     }
 
     &__logo{
@@ -17,18 +18,16 @@
     }
 
     &__titles{
-        // display: flex;
-        width: 40%; //change
-        justify-content: space-between;
-        display: none;
-
         @include tablet{
             display: flex;
+            width: 150px;
         }
+
+        
 
         &-languages{
             position: absolute;
-            left: 80%;//change
+            right: 5vw;
             &:hover{
                 cursor: pointer;
             }
