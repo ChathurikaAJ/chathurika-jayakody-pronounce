@@ -1,6 +1,12 @@
+@use "../../styles/partials/global" as *;
+
 .details{
     padding: 0 1rem;
     padding-top: 1rem;
+
+    // @include tablet{
+    //     padding: 1rem 5vw;
+    // }
 
     &__container {
         display: flex;

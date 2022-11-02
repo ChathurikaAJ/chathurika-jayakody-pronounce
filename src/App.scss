@@ -32,11 +32,18 @@ body {
 h1{
     font-size: 18px;
     font-weight: 700;
+
+    @include tablet{
+        font-size: 28px;
+    }
 }
 
 h2{
     font-size: 13px;
     font-weight: 700;
+    @include tablet{
+        font-size: 18px;
+    }
 }
 
 p, li{

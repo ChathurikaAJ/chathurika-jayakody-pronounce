@@ -8,13 +8,14 @@ const baseURL = 'http://localhost:8080/languages/'
 
 export default function UserTextForm({setTextSubmitted}){
     const [displaySpeaker,setDisplaySpeaker] = useState(false)
-    const [disableSubmit,setDisableSubmit] = useState(false)
+    // const [disableSubmit,setDisableSubmit] = useState(false)
     const {languageId} = useParams()
     
     const handleSubmit = (event) => {
         event.preventDefault()
 
         const userText = event.target.text.value
+        console.log(userText);
 
         if(!userText){
             event.target.text.classList.add('language__form-text-empty')
@@ -25,10 +26,13 @@ export default function UserTextForm({setTextSubmitted}){
                 text: userText
             }
             axios.post(`${baseURL}text`,textDetails)
-                .then(()=>{
-                    setDisableSubmit(true)
-                    setDisplaySpeaker(true)
+                .then((response)=>{
+                    // setDisableSubmit(true)
+                    
                     setTextSubmitted(true)
+                    if(response.data==='User text has been successfully received'){
+                        setDisplaySpeaker(true)
+                    }
                     
                 })
                 .catch((error)=>{
@@ -41,10 +45,17 @@ export default function UserTextForm({setTextSubmitted}){
     const handleSpeakerClick = (event)=> {
         event.preventDefault()
 
-        var audio = new Audio("http://localhost:8080/audio/text-to-speech.wav");
-        if(audio){
-            audio.play()
-        }
+        axios.get("http://localhost:8080/audio/text-to-speech.wav")
+        .then((res)=>{
+            console.log(res);
+            if(res.data !==''){
+                var audio = new Audio("http://localhost:8080/audio/text-to-speech.wav")
+                audio.play()
+            }
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
     }
 
 
@@ -54,7 +65,7 @@ export default function UserTextForm({setTextSubmitted}){
             <form onSubmit={handleSubmit} className='language__form'>
                 <textarea  name='text' className='language__form-text' placeholder='Enter your text here and click start'></textarea>
                 <div  className='language__form-container'>
-                    <button disabled={disableSubmit} className='language__form-start'>Start</button>
+                    <button className='language__form-start'>Start</button>
                     {displaySpeaker && <img className='language__speaker' onClick={handleSpeakerClick} src={speakerIcon}/>}
                 </div>
                 
