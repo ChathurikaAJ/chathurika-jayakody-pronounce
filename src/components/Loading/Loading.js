@@ -6,7 +6,7 @@ export default function Loading (){
         <div className='loading'>
             <div  className='loading__container'>
                 <ThreeCircles
-                    height="100"
+                    height="30"
                     width="100"
                     color="#F5622C"
                     wrapperStyle={{}}

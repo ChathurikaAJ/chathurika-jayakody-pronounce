@@ -1,9 +1,17 @@
+@use '../../styles/partials/global' as *;
+
 .language-page{
 
     &__hero{
         width: 100vw;
+        display: flex;
+        justify-content: center;
         &-image{
-            width: 100%;
+            width: 320px;
+
+            @include tablet {
+                width: 38vw;
+            }
         }
     }
 

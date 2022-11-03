@@ -35,7 +35,7 @@ export default function ({setAudioRecorded}) {
     <div>
         <div className="submit">
                 <button className="submit__button" onClick={handleSubmit}>
-                    See Results
+                    Results
                 </button>
             
         </div>

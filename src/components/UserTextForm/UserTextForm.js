@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from "axios";
 import speakerIcon from '../../assets/icons/speaker.png'
+import Loading from '../Loading/Loading'
 
 
 const baseURL = 'http://localhost:8080/languages/'
@@ -10,20 +11,22 @@ const baseURL = 'http://localhost:8080/languages/'
 export default function UserTextForm({setTextSubmitted}){
     const [displaySpeaker,setDisplaySpeaker] = useState(false)
     // const [disableSubmit,setDisableSubmit] = useState(false)
+    const [displayLoading,setDisplayLoading] = useState(false)
     const {languageId} = useParams()
 
 
     
     const handleSubmit = (event) => {
         event.preventDefault()
+        setDisplaySpeaker(false)
 
-        const userText = event.target.text.value
-        console.log(userText);
+        const userText = event.target.text.value.replace(/[\r\n\v]+/g, " ");
 
         if(!userText){
             event.target.text.classList.add('language__form-text-empty')
         } else{   
             event.target.text.classList.remove('language__form-text-empty') 
+            setDisplayLoading(true)
             const textDetails = {
                 language: languageId,
                 text: userText
@@ -32,10 +35,17 @@ export default function UserTextForm({setTextSubmitted}){
                 .then((response)=>{
                     // setDisableSubmit(true)
 
-                    setTextSubmitted(true)
+                    
                     if(response.data==='User text has been successfully received'){
-                        setDisplaySpeaker(true)
+                        
+                        setTimeout(()=>{
+                            setDisplayLoading(false)
+                            setDisplaySpeaker(true)
+                            setTextSubmitted(true)
+                        },5000)
                     }
+
+                    
                     
                 })
                 .catch((error)=>{
@@ -64,7 +74,7 @@ export default function UserTextForm({setTextSubmitted}){
             })
         })
         .catch((error) => {
-            console.log("axios error:", error);
+            console.log(error);
         });
     }
 
@@ -76,6 +86,7 @@ export default function UserTextForm({setTextSubmitted}){
                 <textarea  name='text' className='language__form-text' placeholder='Enter your text here and click start'></textarea>
                 <div  className='language__form-container'>
                     <button className='language__form-start'>Start</button>
+                    {displayLoading && <div className='language__loading'><Loading/> </div>}
                     {displaySpeaker && <img className='language__speaker' onClick={handleSpeakerClick} src={speakerIcon}/>}
                 </div> 
             </form>

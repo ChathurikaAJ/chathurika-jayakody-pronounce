@@ -8,6 +8,10 @@
         &-container{
             width: 100%;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            // justify-content: space-between;
+            align-items: center;
         }
 
         &-text{
@@ -54,12 +58,18 @@
     }
 
     &__speaker{
-        width: 25px;
+        // width: 10px;
+        height: 20px;
         margin-left: 1rem;
-        margin-bottom: -0.4rem;
+        // margin-bottom: -0.4rem;
+        // align-self: center;
         &:hover{
             cursor: pointer;
         }
+    }
+
+    &__loading {
+        margin-left: 1rem;
     }
 }
 
