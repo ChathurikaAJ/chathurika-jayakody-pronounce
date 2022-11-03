@@ -4,7 +4,7 @@ import "./Result.scss";
 import { v4 as uuid } from "uuid";
 import { useNavigate, Link, useParams } from "react-router-dom";
 
-export default function Result({ result,closeModal }) {
+export default function Result({ result,closeModal,setAudioRecorded }) {
   const {languageId} = useParams()
  
   const words = result.NBest[0].Words;
@@ -12,6 +12,7 @@ export default function Result({ result,closeModal }) {
   const navigate = useNavigate();
   
   const handleTryAgain = ()=>{
+    setAudioRecorded(false)
     closeModal()
   }
 
@@ -25,34 +26,34 @@ export default function Result({ result,closeModal }) {
       <h2  className="result__title">Pronounciation Assessment</h2>
       <div className="result__container">
         <p className="result__name">Accuracy</p>
-        <p className="result__score">
+        <div className="result__score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.AccuracyScore}/>}
-        </p>
+        </div>
       </div>
       <div className="result__container">
         <p className="result__name">Fluency</p>
-        <p className="result__score">
+        <div className="result__score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.FluencyScore}/>}
-        </p>
+        </div>
       </div>
       <div className="result__container">
         <p className="result__name">Completeness</p>
-        <p className="result__score">
-        {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.CompletenessScore}/>}
-        </p>
+        <div className="result__score">
+          {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.CompletenessScore}/>}
+        </div>
       </div>
       <div className="result__container">
         <p className="result__name">Pronounciation</p>
-        <p className="result__score">
+        <div className="result__score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.PronScore}/>}
-        </p>
+        </div>
       </div>
       {words.map((word) => (
         <WordCard
           key={uuid()}
           word={word.Word}
           pronScore={word.PronunciationAssessment}
-          syllabe={word.Syllables}
+          syllables={word.Syllables}
           phonemes={word.Phonemes}
         />
       ))}

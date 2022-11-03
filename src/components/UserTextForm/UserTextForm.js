@@ -49,8 +49,8 @@ export default function UserTextForm({setTextSubmitted}){
     const handleSpeakerClick = (event)=> {
         event.preventDefault()
         axios({
-            url: 'http://localhost:8080/languages/speaker',
-            method: "post",
+            url: 'http://localhost:8080/languages/text-to-speech',
+            method: "get",
             responseType: "blob",
         })
         .then((res) => {

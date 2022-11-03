@@ -7,7 +7,7 @@ import {  useState } from 'react'
 
 const baseURL = "http://localhost:8080/languages/result";
 
-export default function () {
+export default function ({setAudioRecorded}) {
     const [result,setResult] = useState(null)
     const [modalIsOpen, setIsOpen] = useState(false);
     const {languageId} = useParams()
@@ -23,7 +23,8 @@ export default function () {
     Modal.setAppElement(".App");
 
     const handleSubmit = () => {
-        axios.get(baseURL).then((response) => {
+        axios.get(baseURL)
+        .then((response) => {
         console.log(response.data);
         setResult(response.data);
         openModal()
@@ -34,7 +35,7 @@ export default function () {
     <div>
         <div className="submit">
                 <button className="submit__button" onClick={handleSubmit}>
-                    Submit
+                    See Results
                 </button>
             
         </div>
@@ -44,7 +45,7 @@ export default function () {
             className="modal"
             overlayClassName="modal-overlay"
         >
-            <Result closeModal={closeModal} result={result} />
+            <Result closeModal={closeModal} result={result} setAudioRecorded={setAudioRecorded}/>
         </Modal>
     </div>
   );

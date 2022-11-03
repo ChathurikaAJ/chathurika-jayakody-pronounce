@@ -8,10 +8,7 @@ import play from '../../assets/icons/play.png'
 
 const baseURL = 'http://localhost:8080/languages/'
 
-export default function Recorder({setAudioRecorded}){
-
-    
-
+export default function Recorder({setAudioRecorded, setIsLoading}){
 
     // RECORDER
     const [stream, setStream] = useState({
@@ -61,10 +58,10 @@ export default function Recorder({setAudioRecorded}){
 
             mediaRecorder.onstop = async()=>{
                 console.log('Recorder Stopped');
+                setIsLoading(true)
 
                 const url = URL.createObjectURL(chunks.current[0]);
                 postToServer(chunks.current[0])
-                setAudioRecorded(true)
                 chunks.current = [];
 
                 setRecording({
@@ -95,6 +92,15 @@ export default function Recorder({setAudioRecorded}){
         formData.append('user-audio',audio,'user-audio.webm');
         axios.post(`${baseURL}audio`,formData,{
             'Content-type':'multipart/form-data'
+        })
+        .then((response) =>{
+            if(response.status === 200){
+                setTimeout(()=>{
+                    setAudioRecorded(true)
+                    setIsLoading(false)
+                }, 5000)
+              
+            }
         })
     }
 
