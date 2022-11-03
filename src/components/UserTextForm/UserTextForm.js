@@ -4,12 +4,15 @@ import { useParams } from 'react-router-dom'
 import axios from "axios";
 import speakerIcon from '../../assets/icons/speaker.png'
 
+
 const baseURL = 'http://localhost:8080/languages/'
 
 export default function UserTextForm({setTextSubmitted}){
     const [displaySpeaker,setDisplaySpeaker] = useState(false)
     // const [disableSubmit,setDisableSubmit] = useState(false)
     const {languageId} = useParams()
+
+
     
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -28,7 +31,7 @@ export default function UserTextForm({setTextSubmitted}){
             axios.post(`${baseURL}text`,textDetails)
                 .then((response)=>{
                     // setDisableSubmit(true)
-                    
+
                     setTextSubmitted(true)
                     if(response.data==='User text has been successfully received'){
                         setDisplaySpeaker(true)
@@ -42,20 +45,27 @@ export default function UserTextForm({setTextSubmitted}){
     }
 
 
+
     const handleSpeakerClick = (event)=> {
         event.preventDefault()
-
-        axios.get("http://localhost:8080/audio/text-to-speech.wav")
-        .then((res)=>{
-            console.log(res);
-            if(res.data !==''){
-                var audio = new Audio("http://localhost:8080/audio/text-to-speech.wav")
-                audio.play()
-            }
+        axios({
+            url: 'http://localhost:8080/languages/speaker',
+            method: "post",
+            responseType: "blob",
         })
-        .catch((err)=>{
-            console.log(err);
+        .then((res) => {
+            var audioLink = URL.createObjectURL(res.data);
+            axios.get(audioLink)
+            .then((response)=>{
+                if(response.data !== ''){
+                    var audio = new Audio(audioLink)
+                    audio.play()
+                }
+            })
         })
+        .catch((error) => {
+            console.log("axios error:", error);
+        });
     }
 
 
@@ -67,10 +77,8 @@ export default function UserTextForm({setTextSubmitted}){
                 <div  className='language__form-container'>
                     <button className='language__form-start'>Start</button>
                     {displaySpeaker && <img className='language__speaker' onClick={handleSpeakerClick} src={speakerIcon}/>}
-                </div>
-                
+                </div> 
             </form>
-           
         </div>
     )
 }
