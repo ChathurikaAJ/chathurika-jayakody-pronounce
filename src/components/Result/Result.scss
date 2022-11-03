@@ -1,6 +1,14 @@
+@use '../../styles/partials/global' as *;
+
 .result {
     margin: 1rem;
     text-align: center;
+    background-color: white;
+
+    @include tablet{
+        padding: 2rem 1rem;
+        border-radius: 5px;
+    }
 
     &__title {
         font-size: 20px;

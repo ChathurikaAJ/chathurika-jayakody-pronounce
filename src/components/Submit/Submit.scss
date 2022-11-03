@@ -1,3 +1,5 @@
+@use '../../styles/partials/global' as *;
+
 .ReactModal__Body--open,
 .ReactModal__Html--open {
   overflow: hidden;
@@ -35,11 +37,13 @@
     padding: 0;
     position: absolute;
 
-    // @include tablet {
-    //     max-width: 500px;
-    //     height: auto;
-    //     left: 40%;
-    // }
+    @include tablet {
+        max-width: 500px;
+        height: 500px;
+        // height: auto;
+        // left: 40%;
+        // top: 100%;
+    }
 }
 
 .modal-overlay{
@@ -48,6 +52,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     overflow-y: auto;
+
+    @include tablet {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
 }
