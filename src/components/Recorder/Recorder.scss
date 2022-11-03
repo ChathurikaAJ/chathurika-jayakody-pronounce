@@ -1,21 +1,40 @@
 .recorder{
     text-align: center;
 
-    // &__container{
+    &__container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    &__box{
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 50%;
         
-  
-    // }
+    }
+
+    &__in-progress{
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 50%;
+        border: 1px solid red;
+    }
+
 
     &__mic-icon{
         width: 15px;
-        margin-top: 1rem;
+
         &:hover{
             cursor: pointer;
         }
     }
+    
+
     &__stop-icon{
-        width: 15px;
+        height: 15px;
         margin-left: 1rem;
         padding-bottom: 0.25rem;
         &:hover{

@@ -10,6 +10,8 @@ const baseURL = 'http://localhost:8080/languages/'
 
 export default function Recorder({setAudioRecorded, setIsLoading}){
 
+    const [recordingClass,setRecordingClass] = useState('')
+
     // RECORDER
     const [stream, setStream] = useState({
         access:false,
@@ -42,13 +44,14 @@ export default function Recorder({setAudioRecorded, setIsLoading}){
             const track = mediaRecorder.stream.getTracks()[0];
             track.onended = () => console.log('ended');
 
-            mediaRecorder.onstart = ()=> {
+            mediaRecorder.onstart = (event)=> {
                 console.log('recording');
                 setRecording ({
                     active: true,
                     available:false,
                     url:''
                 });
+                setRecordingClass(', recorder__in-progress')
             };
 
             mediaRecorder.ondataavailable = (event) => {
@@ -69,6 +72,8 @@ export default function Recorder({setAudioRecorded, setIsLoading}){
                     available:true,
                     url
                 });
+
+                setRecordingClass('')
             };
 
             setStream({
@@ -122,10 +127,16 @@ export default function Recorder({setAudioRecorded, setIsLoading}){
         <div className='recorder'>
             { stream.access &&
         
-                    <div  className='recorder__container'>
-                        <img onClick={()=> stream.recorder.start()} src={mic} className='recorder__mic-icon' ></img>
+                    <div className='recorder__container'>
+                        <div className={`recorder__box${recordingClass}`}>
+                            <img onClick={()=> stream.recorder.start()} src={mic} className='recorder__mic-icon' ></img>
+                            
+                        </div>
+
+                        
                         <img onClick={()=> stream.recorder.stop()}  src={stop} className='recorder__stop-icon' ></img>
-                        {recording.available && <img src={play} onClick={hadlePlay} className='recorder__play-icon'/>}
+                        {/* {recording.available && <img src={play} onClick={hadlePlay} className='recorder__play-icon'/>} */}
+                        <img src={play} onClick={hadlePlay} className='recorder__play-icon'/>
                     </div>
             }
         </div>
