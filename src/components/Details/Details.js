@@ -10,15 +10,15 @@ export default function Details(){
             <h2>How it works</h2>
             <div className='details__container'>
                 <img className='details__image' src={write}/>
-                <p className='details__text'>Enter the text you want to practice</p>
+                <p className='details__text'>Type the word or sentence you want to practice</p>
             </div>
             <div className='details__container'>
                 <img className='details__image' src={hear}/>
-                <p className='details__text'>Hear a sample audio of the text</p>
+                <p className='details__text'>Listen to a sample audio for reference</p>
             </div>
             <div className='details__container'>
                 <img className='details__image' src={speak}/>
-                <p className='details__text'>Record yourself repeating the text</p>
+                <p className='details__text'>Record yourself</p>
             </div>
             <div className='details__container'>
                 <img className='details__image' src={result}/>

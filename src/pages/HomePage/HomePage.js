@@ -22,7 +22,7 @@ export default function HomePage(){
                     <Link className='language__list-link' to='/language/chinese'><p className='language__list-name'>Chinese</p></Link>
                 </div>
                 <Details />
-                <Footer />
+                {/* <Footer /> */}
             </main>
         </div>
         

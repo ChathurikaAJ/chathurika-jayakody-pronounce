@@ -5,6 +5,7 @@ import LanguagePage from './pages/LanguagePage/LanguagePage'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 import Navigation from './components/Navigation/Navigation';
 
+
 function App() {
   return (
     <div className='App'>

@@ -18,6 +18,8 @@
     }
 
     &__titles{
+        display: none;
+       
         @include tablet{
             display: flex;
             width: 150px;

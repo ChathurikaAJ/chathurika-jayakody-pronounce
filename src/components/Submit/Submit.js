@@ -7,10 +7,11 @@ import {  useState } from 'react'
 
 const baseURL = "http://localhost:8080/languages/result";
 
-export default function ({setAudioRecorded}) {
+export default function ({setAudioRecorded, setNoAudio}) {
     const [result,setResult] = useState(null)
     const [modalIsOpen, setIsOpen] = useState(false);
     const {languageId} = useParams()
+
 
     function openModal() {
         setIsOpen(true);
@@ -25,9 +26,17 @@ export default function ({setAudioRecorded}) {
     const handleSubmit = () => {
         axios.get(baseURL)
         .then((response) => {
-        console.log(response.data);
-        setResult(response.data);
-        openModal()
+            if(response.data==='Speech could not be recognized'){
+                console.log('error');
+                setAudioRecorded(false)
+                setNoAudio(true)
+            } else {
+                console.log(response.data);
+                setResult(response.data);
+                openModal()
+                setNoAudio(false)
+            }
+        
         });
     };
 
@@ -36,8 +45,7 @@ export default function ({setAudioRecorded}) {
         <div className="submit">
                 <button className="submit__button" onClick={handleSubmit}>
                     Results
-                </button>
-            
+                </button>            
         </div>
         <Modal
             isOpen={modalIsOpen}

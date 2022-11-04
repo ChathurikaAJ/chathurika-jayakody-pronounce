@@ -2,21 +2,19 @@
 
 .language-page{
 
-    &__hero{
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        &-image{
-            width: 320px;
 
-            @include tablet {
-                width: 38vw;
-            }
+    &__main{
+        padding: 1rem;
+        @include tablet{
+            padding: 1rem 5vw;
         }
     }
 
-    &__main{
-        margin: 0 1rem;
+    &__no-audio{
+        text-align: center;
+        margin: 1rem;
+        color: #F5622C;
+        font-size: 18px;
     }
 
     

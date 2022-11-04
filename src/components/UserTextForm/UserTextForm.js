@@ -43,8 +43,7 @@ export default function UserTextForm({setTextSubmitted}){
                             setDisplaySpeaker(true)
                             setTextSubmitted(true)
                         },5000)
-                    }
-
+                    } 
                     
                     
                 })
@@ -72,6 +71,7 @@ export default function UserTextForm({setTextSubmitted}){
                     audio.play()
                 }
             })
+            .catch ((error)=> {console.log(error)})
         })
         .catch((error) => {
             console.log(error);

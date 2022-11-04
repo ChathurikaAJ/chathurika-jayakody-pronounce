@@ -8,7 +8,7 @@ import play from '../../assets/icons/play.png'
 
 const baseURL = 'http://localhost:8080/languages/'
 
-export default function Recorder({setAudioRecorded, setIsLoading}){
+export default function Recorder({setAudioRecorded, setIsLoading,setNoAudio}){
 
     const [recordingClass,setRecordingClass] = useState('')
 
@@ -46,6 +46,7 @@ export default function Recorder({setAudioRecorded, setIsLoading}){
 
             mediaRecorder.onstart = (event)=> {
                 console.log('recording');
+          
                 setRecording ({
                     active: true,
                     available:false,
@@ -62,7 +63,7 @@ export default function Recorder({setAudioRecorded, setIsLoading}){
             mediaRecorder.onstop = async()=>{
                 console.log('Recorder Stopped');
                 setIsLoading(true)
-
+                setNoAudio(false)
                 const url = URL.createObjectURL(chunks.current[0]);
                 postToServer(chunks.current[0])
                 chunks.current = [];

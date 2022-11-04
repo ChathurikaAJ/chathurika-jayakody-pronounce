@@ -5,7 +5,7 @@ export default function Footer(){
     return(
         <div className='footer'>
             <img className='footer__image' src={ballon}/>
-            <p className='footer__text'>Have Fun</p>
+            {/* <p className='footer__text'>Have Fun</p> */}
         </div>
     )
 }
