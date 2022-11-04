@@ -8,15 +8,33 @@
         padding: 1rem 5vw;
     }
 
+    &__section{
+        @include desktop {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+      
+        }
+    }
+
     &__container {
         display: flex;
         align-items: center;
         gap: 30px;
         margin-top: 1rem;
+        @include desktop {
+            width: 19.14vw;
+            display: flex;
+            justify-content: space-between;
+        }
     }
+
     &__image{
         width: 30px;
         margin-left: 1.5rem;
+        @include desktop {
+            margin: 0;
+        }
         
     }
 
