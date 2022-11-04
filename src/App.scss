@@ -55,3 +55,20 @@ p, li{
     }
 
 }
+
+::-webkit-scrollbar {
+    height: 4px;              /* height of horizontal scrollbar ← You're missing this */
+    width: 4px;               /* width of vertical scrollbar */
+    // border: 1px solid #000000;
+    margin: 1rem 0;
+  }
+
+::-webkit-scrollbar-thumb:horizontal{
+    background-color: rgb(255, 255, 255);
+    // border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(240, 233, 233, 0.544);
+    border: none;
+}

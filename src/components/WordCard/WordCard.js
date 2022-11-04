@@ -4,6 +4,7 @@ import { v4 as uuid } from "uuid";
 import SyllableCard from "../SyllableCard/SyllableCard";
 import { useEffect, useState } from "react";
 import {useParams } from "react-router-dom";
+import arrow from '../../assets/icons/arrow.png'
 
 export default function WordCard({ word, pronScore, phonemes,syllables }) {
 
@@ -33,7 +34,7 @@ export default function WordCard({ word, pronScore, phonemes,syllables }) {
     <div className="word-card">
         <div className="word-card__score">
             <p className="word-card__score-text">{word}</p>
-            <p className="word-card__score-text">{pronScore.AccuracyScore}</p>
+            <p className="word-card__score-number">{pronScore.AccuracyScore}</p>
         </div>
       
       {displaySyllables && <div className="word-card__syllabes">
@@ -48,6 +49,7 @@ export default function WordCard({ word, pronScore, phonemes,syllables }) {
 
       {displayphonemes && <div className="word-card__phonemes">
         {phonemes && phonemes.map((phoneme) => (
+          
           <PhonemesCard
             key={uuid()}
             phoneme={phoneme.Phoneme}
@@ -55,7 +57,10 @@ export default function WordCard({ word, pronScore, phonemes,syllables }) {
           />
         ))}
       </div>}
-
+      {displaySyllables && <img className="arrow-1" src={arrow}/>}
+      {displaySyllables && <p className="syllables">Syllables</p>}
+      {displaySyllables && <img className="arrow-2" src={arrow}/>}
+      {displaySyllables && <p className="phonemes">Phonemes</p>}
     </div>
   );
 }

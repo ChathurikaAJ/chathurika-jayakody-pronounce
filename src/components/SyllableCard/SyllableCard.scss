@@ -1,6 +1,6 @@
 .word-card__syllable-box{
     background-color: white;
-    padding: 1rem 0;
+    padding: 0.5rem;
     width: 100%;
     margin: 1rem 0;
     border-radius: 3px;
@@ -8,5 +8,13 @@
 
     &-text{
         font-size: 15px;
+    }
+
+    &-low{
+        background-color: #F5622C;
+        padding: 0.5rem;
+        width: 100%;
+        margin: 1rem 0;
+        border-radius: 3px;
     }
 }

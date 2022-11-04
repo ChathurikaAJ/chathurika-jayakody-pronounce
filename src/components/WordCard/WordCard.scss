@@ -1,25 +1,40 @@
+@use "../../styles/partials/global" as *;
+
 .word-card{
     background-color: #2EAEB7;
     margin-bottom: 1rem;
     border-radius: 3px;
     box-shadow: 0 4px 8px -4px rgb(195, 200, 201);
     padding: 1rem 2.25rem 1rem 1rem;
+
     
 
     &__score{
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        overflow-x: scroll;
+        padding-bottom: 1rem;
 
         &-text{
             font-size: 20px;
             color: white;
             font-weight: 700;
+
+            
+        }
+        &-number{
+            font-size: 20px;
+            color: white;
+            font-weight: 700;
+            padding-left: 2rem;
         }
     }
 
     &__syllabes{
         display: flex;
         gap: 10px;
+        overflow: auto;
         // justify-content:space-between;
     }
 
@@ -28,7 +43,62 @@
         gap: 10px;
         width: 100%;
         overflow: auto;
+        padding: 1rem 0;
         // flex-wrap: wrap;
         // justify-content:space-between;
+    }
+}
+
+
+.arrow-1 {
+    display: none;
+
+    @include desktop {
+        display: flex;
+        width: 80px;
+        position: absolute;
+        left: 450px;
+        top: 600px;
+    }
+    
+}
+
+.arrow-2 {
+    display: none;
+
+    @include desktop {
+        display: flex;
+        width: 80px;
+        position: absolute;
+        left: 450px;
+        top: 700px;
+    }
+}
+
+.syllables {
+    display: none;
+
+    @include desktop {
+        display: flex;
+        position: absolute;
+        top: 610px;
+        left: 550px;
+        color: white;
+        font-family: 'Bradley Hand ITC';
+        font-size: 20px;
+    }
+}
+
+.phonemes{
+    display: none;
+
+    @include desktop {
+        display: flex;
+        position: absolute;
+        top: 710px;
+        left: 550px;
+        color: white;
+        font-family: 'Bradley Hand ITC';
+        font-size: 20px;
     }
 }

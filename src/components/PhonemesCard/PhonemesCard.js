@@ -9,7 +9,7 @@ export default function PhonemesCard({phoneme,score}){
         if(score <= 60){
             setLowScoreClass(', word-card__phonemes-box-low')
         }
-    })
+    },[])
 
 
     return (
