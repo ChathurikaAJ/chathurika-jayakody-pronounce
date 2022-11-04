@@ -104,7 +104,7 @@ export default function Recorder({setAudioRecorded, setIsLoading,setNoAudio}){
                 setTimeout(()=>{
                     setAudioRecorded(true)
                     setIsLoading(false)
-                }, 5000)
+                }, 3000)
               
             }
         })

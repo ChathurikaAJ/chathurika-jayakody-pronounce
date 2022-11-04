@@ -26,6 +26,9 @@
     &__phonemes{
         display: flex;
         gap: 10px;
+        width: 100%;
+        overflow: auto;
+        // flex-wrap: wrap;
         // justify-content:space-between;
     }
 }
