@@ -13,7 +13,7 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        overflow-x: scroll;
+        overflow-x: auto;
         padding-bottom: 1rem;
 
         &-text{
@@ -35,7 +35,6 @@
         display: flex;
         gap: 10px;
         overflow: auto;
-        // justify-content:space-between;
     }
 
     &__phonemes{
@@ -44,8 +43,6 @@
         width: 100%;
         overflow: auto;
         padding: 1rem 0;
-        // flex-wrap: wrap;
-        // justify-content:space-between;
     }
 }
 
