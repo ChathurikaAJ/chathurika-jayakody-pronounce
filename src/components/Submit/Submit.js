@@ -49,6 +49,7 @@ export default function Submit ({setAudioRecorded, setNoAudio}) {
             onRequestClose={closeModal}
             className="modal"
             overlayClassName="modal-overlay"
+            shouldCloseOnOverlayClick={false}
         >
             <Result closeModal={closeModal} result={result} setAudioRecorded={setAudioRecorded}/>
         </Modal>

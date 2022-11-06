@@ -41,7 +41,7 @@ export default function UserTextForm({setTextSubmitted}){
                             setDisplayLoading(false)
                             setDisplaySpeaker(true)
                             setTextSubmitted(true)
-                        },5000)
+                        },3000)
                     } 
                 })
                 .catch((error)=>{
