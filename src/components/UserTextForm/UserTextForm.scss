@@ -1,8 +1,8 @@
-.language{
+.language-page{
     &__form {
         display: flex;
         flex-direction: column;
-        width: 100%; //change later
+        width: 100%; 
         margin-top: 1rem;
 
         &-container{
@@ -10,7 +10,6 @@
             text-align: center;
             display: flex;
             justify-content: center;
-            // justify-content: space-between;
             align-items: center;
         }
 
@@ -32,9 +31,6 @@
             &-empty{
                 border: 2px red solid;
             }
-
-            
-            
         }
         
 
@@ -52,17 +48,13 @@
             &:hover{
                 cursor: pointer;
             }
-
-            
         }
     }
 
     &__speaker{
-        // width: 10px;
         height: 20px;
         margin-left: 1rem;
-        // margin-bottom: -0.4rem;
-        // align-self: center;
+        
         &:hover{
             cursor: pointer;
         }

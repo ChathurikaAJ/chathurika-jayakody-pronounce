@@ -12,7 +12,6 @@ export default function WordCard({ word, pronScore, phonemes,syllables }) {
   const [displayphonemes, setDisplayPhonemes] = useState(false)
 
   const {languageId} = useParams()
-  console.log(languageId);
 
   useEffect(()=>{
     

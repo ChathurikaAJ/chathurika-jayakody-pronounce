@@ -2,15 +2,12 @@ import WordCard from "../WordCard/WordCard";
 import PercentageCircle from '../PercentageCircle/PercentageCircle'
 import "./Result.scss";
 import { v4 as uuid } from "uuid";
-import { useNavigate, Link, useParams } from "react-router-dom";
+
 
 export default function Result({ result,closeModal,setAudioRecorded }) {
-  const {languageId} = useParams()
  
   const words = result.NBest[0].Words;
 
-  const navigate = useNavigate();
-  
   const handleTryAgain = ()=>{
     setAudioRecorded(false)
     closeModal()
@@ -22,29 +19,29 @@ export default function Result({ result,closeModal,setAudioRecorded }) {
   }
 
   return (
-    <div className="result">
-      <h2  className="result__title">Pronounciation Assessment</h2>
-      <div className="result__container">
-        <p className="result__name">Accuracy</p>
-        <div className="result__score">
+    <div className="language-page__result">
+      <h2  className="language-page__result-title">Pronounciation Assessment</h2>
+      <div className="language-page__result-container">
+        <p className="language-page__result-name">Accuracy</p>
+        <div className="language-page__result-score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.AccuracyScore}/>}
         </div>
       </div>
-      <div className="result__container">
-        <p className="result__name">Fluency</p>
-        <div className="result__score">
+      <div className="language-page__result-container">
+        <p className="language-page__result-name">Fluency</p>
+        <div className="language-page__result-score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.FluencyScore}/>}
         </div>
       </div>
-      <div className="result__container">
-        <p className="result__name">Completeness</p>
-        <div className="result__score">
+      <div className="language-page__result-container">
+        <p className="language-page__result-name">Completeness</p>
+        <div className="language-page__result-score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.CompletenessScore}/>}
         </div>
       </div>
-      <div className="result__container">
-        <p className="result__name">Pronounciation</p>
-        <div className="result__score">
+      <div className="language-page__result-container">
+        <p className="language-page__result-name">Pronounciation</p>
+        <div className="language-page__result-score">
           {<PercentageCircle amount={result.NBest[0].PronunciationAssessment.PronScore}/>}
         </div>
       </div>
@@ -57,9 +54,9 @@ export default function Result({ result,closeModal,setAudioRecorded }) {
           phonemes={word.Phonemes}
         />
       ))}
-      <div className="result__buttons">
-        <button onClick={handleTryAgain}className="result__buttons-item">Try Again</button>
-        <button onClick={handleNewText} className="result__buttons-item">New Text</button>
+      <div className="language-page__result-buttons">
+        <button onClick={handleTryAgain}className="language-page__result-buttons-item">Try Again</button>
+        <button onClick={handleNewText} className="language-page__result-buttons-item">New Text</button>
         
       </div>
       

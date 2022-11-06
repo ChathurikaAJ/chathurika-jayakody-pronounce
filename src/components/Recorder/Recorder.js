@@ -52,7 +52,7 @@ export default function Recorder({setAudioRecorded, setIsLoading,setNoAudio}){
                     available:false,
                     url:''
                 });
-                setRecordingClass(', recorder__in-progress')
+                setRecordingClass(', language-page__recorder-in-progress')
             };
 
             mediaRecorder.ondataavailable = (event) => {
@@ -125,19 +125,17 @@ export default function Recorder({setAudioRecorded, setIsLoading,setNoAudio}){
     }
 
     return (
-        <div className='recorder'>
+        <div className='language-page__recorder'>
             { stream.access &&
         
-                    <div className='recorder__container'>
-                        <div className={`recorder__box${recordingClass}`}>
-                            <img onClick={()=> stream.recorder.start()} src={mic} className='recorder__mic-icon' ></img>
-                            
+                    <div className='language-page__recorder-container'>
+                        <div className={`language-page__recorder-box${recordingClass}`}>
+                            <img onClick={()=> stream.recorder.start()} src={mic} className='language-page__recorder-mic-icon' ></img>
                         </div>
 
+                        <img onClick={()=> stream.recorder.stop()}  src={stop} className='language-page__recorder-stop-icon' ></img>
+                        <img src={play} onClick={hadlePlay} className='language-page__recorder-play-icon'/>
                         
-                        <img onClick={()=> stream.recorder.stop()}  src={stop} className='recorder__stop-icon' ></img>
-                        {/* {recording.available && <img src={play} onClick={hadlePlay} className='recorder__play-icon'/>} */}
-                        <img src={play} onClick={hadlePlay} className='recorder__play-icon'/>
                     </div>
             }
         </div>

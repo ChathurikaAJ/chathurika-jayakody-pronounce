@@ -1,27 +1,23 @@
 import Recorder from '../../components/Recorder/Recorder'
 import UserTextForm from '../../components/UserTextForm/UserTextForm'
 import Submit from '../../components/Submit/Submit'
-import { useParams } from 'react-router-dom'
-import {  useEffect, useState } from 'react'
-import './LanguagePage.scss'
 import Loading from '../../components/Loading/Loading'
 import Footer from '../../components/Footer/Footer'
+import { useParams } from 'react-router-dom'
+import { useState } from 'react'
+import './LanguagePage.scss'
 
 
 export default function LanguagePage(){
     const {languageId} = useParams()
-    const [heroImage, setHeroImage] = useState('')
     const [textSubmitted, setTextSubmitted] = useState(false)
     const [audioRecorded, setAudioRecorded] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const [noAudio, setNoAudio] = useState (false)
     
 
-
-
     return(
         <div className='language-page'>
-            
             
             <div className='language-page__main'>
                 <h1>{languageId.charAt(0).toUpperCase()+languageId.slice(1)}</h1>
@@ -33,8 +29,6 @@ export default function LanguagePage(){
             </div>
 
             <Footer />
-            
-            
         </div>
 
     )

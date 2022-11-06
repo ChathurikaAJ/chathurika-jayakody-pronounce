@@ -1,16 +1,15 @@
-import './UserTextForm.scss'
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
 import axios from "axios";
 import speakerIcon from '../../assets/icons/speaker.png'
 import Loading from '../Loading/Loading'
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
+import './UserTextForm.scss'
 
 
 const baseURL = 'http://localhost:8080/languages/'
 
 export default function UserTextForm({setTextSubmitted}){
     const [displaySpeaker,setDisplaySpeaker] = useState(false)
-    // const [disableSubmit,setDisableSubmit] = useState(false)
     const [displayLoading,setDisplayLoading] = useState(false)
     const {languageId} = useParams()
 
@@ -20,9 +19,11 @@ export default function UserTextForm({setTextSubmitted}){
         event.preventDefault()
         setDisplaySpeaker(false)
 
+        // Remove any line breaks
         const userText = event.target.text.value.replace(/[\r\n\v]+/g, " ");
 
         if(!userText){
+            // Alert if text field is empty
             event.target.text.classList.add('language__form-text-empty')
         } else{   
             event.target.text.classList.remove('language__form-text-empty') 
@@ -33,8 +34,6 @@ export default function UserTextForm({setTextSubmitted}){
             }
             axios.post(`${baseURL}text`,textDetails)
                 .then((response)=>{
-                    // setDisableSubmit(true)
-
                     
                     if(response.data==='User text has been successfully received'){
                         
@@ -44,8 +43,6 @@ export default function UserTextForm({setTextSubmitted}){
                             setTextSubmitted(true)
                         },5000)
                     } 
-                    
-                    
                 })
                 .catch((error)=>{
                     console.log(error);
@@ -81,13 +78,13 @@ export default function UserTextForm({setTextSubmitted}){
 
 
     return(
-        <div className='language__container'>
-            <form onSubmit={handleSubmit} className='language__form'>
-                <textarea  name='text' className='language__form-text' placeholder='Enter your text here and click start'></textarea>
-                <div  className='language__form-container'>
-                    <button className='language__form-start'>Start</button>
-                    {displayLoading && <div className='language__loading'><Loading/> </div>}
-                    {displaySpeaker && <img className='language__speaker' onClick={handleSpeakerClick} src={speakerIcon}/>}
+        <div className='language-page__container'>
+            <form onSubmit={handleSubmit} className='language-page__form'>
+                <textarea  name='text' className='language-page__form-text' placeholder='Enter your text here and click start'></textarea>
+                <div  className='language-page__form-container'>
+                    <button className='language-page__form-start'>Start</button>
+                    {displayLoading && <div className='language-page__loading'><Loading/> </div>}
+                    {displaySpeaker && <img className='language-page__speaker' onClick={handleSpeakerClick} src={speakerIcon}/>}
                 </div> 
             </form>
         </div>

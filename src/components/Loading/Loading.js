@@ -3,7 +3,7 @@ import './Loading.scss'
 
 export default function Loading (){
     return(
-        <div className='loading'>
+        <div className='language-page__loading'>
             <div  className='loading__container'>
                 <ThreeCircles
                     height="30"

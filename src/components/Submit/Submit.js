@@ -2,15 +2,13 @@ import "./Submit.scss";
 import axios from "axios";
 import Modal from 'react-modal'
 import Result from '../Result/Result'
-import { Link, useParams } from 'react-router-dom'
 import {  useState } from 'react'
 
 const baseURL = "http://localhost:8080/languages/result";
 
-export default function ({setAudioRecorded, setNoAudio}) {
+export default function Submit ({setAudioRecorded, setNoAudio}) {
     const [result,setResult] = useState(null)
     const [modalIsOpen, setIsOpen] = useState(false);
-    const {languageId} = useParams()
 
 
     function openModal() {
@@ -31,7 +29,6 @@ export default function ({setAudioRecorded, setNoAudio}) {
                 setAudioRecorded(false)
                 setNoAudio(true)
             } else {
-                console.log(response.data);
                 setResult(response.data);
                 openModal()
                 setNoAudio(false)
@@ -42,8 +39,8 @@ export default function ({setAudioRecorded, setNoAudio}) {
 
   return (
     <div>
-        <div className="submit">
-                <button className="submit__button" onClick={handleSubmit}>
+        <div className="language-page__submit">
+                <button className="language-page__submit-button" onClick={handleSubmit}>
                     Results
                 </button>            
         </div>

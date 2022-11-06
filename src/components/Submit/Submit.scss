@@ -5,10 +5,10 @@
   overflow: hidden;
 }
 
-.submit{
+.language-page__submit{
     text-align: center;
     
-    &__button{
+    &-button{
         width: 70px;
         align-self: center;
         margin-top: 1rem;
@@ -40,9 +40,6 @@
     @include tablet {
         max-width: 500px;
         height: 500px;
-        // height: auto;
-        // left: 40%;
-        // top: 100%;
     }
 }
 

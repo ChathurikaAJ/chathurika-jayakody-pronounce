@@ -1,6 +1,6 @@
 @use '../../styles/partials/global' as *;
 
-.result {
+.language-page__result {
     margin: 1rem;
     text-align: center;
     background-color: white;
@@ -10,11 +10,11 @@
         border-radius: 5px;
     }
 
-    &__title {
+    &-title {
         font-size: 20px;
         margin-bottom: 1rem;
     }
-    &__container{
+    &-container{
         display: flex;
         width: 100%;
         justify-content: space-between;
@@ -24,12 +24,12 @@
         margin-bottom: 1rem;
     }
 
-    &__name{
+    &-name{
         font-size: 20px;
         padding-top: 1rem;
     }
 
-    &__buttons{
+    &-buttons{
         margin-top: 1rem;
         display: flex;
         justify-content: center;

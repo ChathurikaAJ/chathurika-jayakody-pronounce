@@ -1,6 +1,6 @@
 @use "../../styles/partials/global" as *;
 
-.details{
+.home__details{
     padding: 0 1rem;
     padding-top: 1rem;
 
@@ -8,20 +8,21 @@
         padding: 1rem 5vw;
     }
 
-    &__section{
+    &-section{
+
         @include desktop {
             display: flex;
             width: 100%;
             justify-content: space-between;
-      
         }
     }
 
-    &__container {
+    &-container {
         display: flex;
         align-items: center;
         gap: 30px;
         margin-top: 1rem;
+
         @include desktop {
             width: 19.14vw;
             display: flex;
@@ -29,16 +30,16 @@
         }
     }
 
-    &__image{
+    &-image{
         width: 30px;
         margin-left: 1.5rem;
+
         @include desktop {
             margin: 0;
         }
-        
     }
 
-    &__text{
+    &-text{
         width: 70%;
     }
 }

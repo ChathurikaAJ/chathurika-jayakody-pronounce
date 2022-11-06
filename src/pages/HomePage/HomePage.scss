@@ -1,89 +1,83 @@
 @use "../../styles/partials/global" as *;
 
-.hero {
-    background-color: #F5F5F5;
-    display: flex;
-    justify-content: center;
+.home {
 
-    &__image{
-        height: 50vw;
-
-        @include tablet{
-            height: 40vh;
-        }
-
-        @include desktop{
-            height: 55vh;
-        }
-    }
-
-    
-}
-
-.language{
-    &__title{
-        margin: 1rem 0;
-        padding: 0 1rem;
-
-        @include tablet {
-            padding: 0 5vw;
-            margin-top: 1.5rem;
-      
-        }
-    }
-
-    &__sub-title{
-        padding: 0 1rem 1rem 1rem;
-        @include tablet {
-            padding: 0 5vw 2rem 5vw;
-      
-        }
-    }
-
-    &__list{
-        
-        justify-content: space-between;
-        text-align: center;
+    &__hero {
+        background-color: #F5F5F5;
         display: flex;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #F5622C;
-        padding: 0 1rem;
-        
-    
-        @include tablet{
-            padding: 0 5vw;
-            gap: 5%;
-            flex-wrap: nowrap;
+        justify-content: center;
 
-        }
-
-        &-link {
-            @include tablet{
-                width: 23.75%;
-            }
-        }
-    
-       
-    
-        &-name{
-            background-color: #2EAEB7;
-            margin-bottom: 1rem;
-            padding: 1rem 0;
-            color: white;
-            border-radius: 5px;
-            width: 40vw;
-            box-shadow: 0 8px 8px -4px lightblue;
+        &-image{
+            height: 50vw;
 
             @include tablet{
-                width: 100%;
-                margin-bottom: 2rem;
+                height: 40vh;
             }
-        }
 
-        
+            @include desktop{
+                height: 55vh;
+            }
+        }  
     }
-   
-}
 
+    &__languages{
+
+        &-title{
+            margin: 1rem 0;
+            padding: 0 1rem;
+
+            @include tablet {
+                padding: 0 5vw;
+                margin-top: 1.5rem;
+            }
+        }
+
+        &-sub-title{
+            padding: 0 1rem 1rem 1rem;
+
+            @include tablet {
+                padding: 0 5vw 2rem 5vw;
+        
+            }
+        }
+
+        &-list{
+            justify-content: space-between;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #F5622C;
+            padding: 0 1rem;
+            
+        
+            @include tablet{
+                padding: 0 5vw;
+                gap: 5%;
+                flex-wrap: nowrap;
+            }
+
+            &-link {
+                @include tablet{
+                    width: 23.75%;
+                }
+            }
+        
+            &-name{
+                background-color: #2EAEB7;
+                margin-bottom: 1rem;
+                padding: 1rem 0;
+                color: white;
+                border-radius: 5px;
+                width: 40vw;
+                box-shadow: 0 8px 8px -4px lightblue;
+
+                @include tablet{
+                    width: 100%;
+                    margin-bottom: 2rem;
+                }
+            } 
+        }
+    }
+}
 
 

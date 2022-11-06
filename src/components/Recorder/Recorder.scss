@@ -1,21 +1,20 @@
-.recorder{
+.language-page__recorder{
     text-align: center;
 
-    &__container{
+    &-container{
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    &__box{
+    &-box{
         width: 40px;
         height: 40px;
         padding: 5px;
         border-radius: 50%;
-        
     }
 
-    &__in-progress{
+    &-in-progress{
         width: 40px;
         height: 40px;
         padding: 5px;
@@ -24,7 +23,7 @@
     }
 
 
-    &__mic-icon{
+    &-mic-icon{
         width: 15px;
 
         &:hover{
@@ -33,16 +32,17 @@
     }
     
 
-    &__stop-icon{
+    &-stop-icon{
         height: 15px;
         margin-left: 1rem;
         padding-bottom: 0.25rem;
+
         &:hover{
             cursor: pointer;
         }
-       
     }
-    &__play-icon{
+
+    &-play-icon{
         width: 15px;
         margin-left: 1rem;
         padding-bottom: 0.25rem;
@@ -50,7 +50,5 @@
             cursor: pointer;
         }
     }
-
-
 }
 
