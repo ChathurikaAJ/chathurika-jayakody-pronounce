@@ -23,7 +23,7 @@ export default function Details(){
                 </div>
                 <div className='home__details-container'>
                     <img className='home__details-image' src={result}/>
-                    <p className='home__details-text'>Get a detailed assessment on your pronounciation</p>
+                    <p className='home__details-text'>Get a detailed assessment on your pronunciation</p>
                     
                 </div>
             </div>
