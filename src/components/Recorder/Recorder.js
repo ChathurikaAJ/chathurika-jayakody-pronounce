@@ -118,7 +118,7 @@ export default function Recorder({setAudioRecorded, setIsLoading,setNoAudio}){
         })
     },[])
 
-    const hadlePlay = (event)=> {
+    const handlePlay = (event)=> {
         event.preventDefault()
         var audio = new Audio(recording.url);
         audio.play()
@@ -134,7 +134,7 @@ export default function Recorder({setAudioRecorded, setIsLoading,setNoAudio}){
                         </div>
 
                         <img onClick={()=> stream.recorder.stop()}  src={stop} className='language-page__recorder-stop-icon' ></img>
-                        <img src={play} onClick={hadlePlay} className='language-page__recorder-play-icon'/>
+                        <img src={play} onClick={handlePlay} className='language-page__recorder-play-icon'/>
                         
                     </div>
             }
