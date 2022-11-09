@@ -19,9 +19,11 @@ Currently four languages are available - English, Chinese, French and Spanish.
 
 ## Setup
 
-- Clone the client and server repositories <br>
-    client : https://github.com/ChathurikaAJ/chathurika-jayakody-capstone
-    server: https://github.com/ChathurikaAJ/chathurika-jayakody-capstone-API
+- Clone the client and server repositories
+
+    Client : https://github.com/ChathurikaAJ/chathurika-jayakody-capstone
+
+    Server: https://github.com/ChathurikaAJ/chathurika-jayakody-capstone-API
 
 - Update process.env file
 - Run npm i on both repos
@@ -31,7 +33,8 @@ Currently four languages are available - English, Chinese, French and Spanish.
 ## How It Works
 
 1. Select language, enter text, click start
-2. On click, text sent to backend using axios POST <br>
+2. On click, text sent to backend using axios POST 
+    
     Backend:
     - Link user text and run Azure Speech SDK text-to-speech
     - Save incoming audio file on server
@@ -42,7 +45,8 @@ Currently four languages are available - English, Chinese, French and Spanish.
 5. An audiolink created (URL.createObjectURL) with the response data
 6. Once link is ready, it will play the text-to-speech audio
 7. Click record (mediaRecorder) and stop
-8. On stop, audiolink created (URL.createObjectURL) and audio chunks sent to backend using axios POST (formData) <br>
+8. On stop, audiolink created (URL.createObjectURL) and audio chunks sent to backend using axios POST (formData) 
+    
     Backend:
     - Save audio file (in webm format) using multer
     - Run fluent-ffmpeg to convert to wav format
